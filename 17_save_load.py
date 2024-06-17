@@ -108,7 +108,7 @@ torch.save(model.state_dict(), PATH)
 
 device = torch.device('cpu')
 model = Model(*args, **kwargs)
-model.load_state_dict(torch.load(PATH, map_location=device))
+model.load_state_dict(torch.load(PATH, map_location=device))  # 注意这里map_location=CPU
 
 # 2) Save on GPU, Load on GPU
 device = torch.device("cuda")
@@ -127,6 +127,7 @@ torch.save(model.state_dict(), PATH)
 
 device = torch.device("cuda")
 model = Model(*args, **kwargs)
+# 注意这里map_location=GPU
 model.load_state_dict(torch.load(PATH, map_location="cuda:0"))  # Choose whatever GPU device number you want
 model.to(device)
 
