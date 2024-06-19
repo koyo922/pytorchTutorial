@@ -5,3 +5,5 @@ cnn.pth
 data/hymenoptera_data*
 runs/
 model.pth
+data/name2lang
+checkpoint.pth
